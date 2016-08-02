@@ -1,5 +1,6 @@
-Name               DOB       Zip
-John Smith         23/01/45  28211
-Bill Jones         12/01/52  47481
-Carla Wray         13/07/55  66268
-David Reynolds     19/11/58  65662
+Name              DOB       Zip
+Nathan Ford       16/08/60  28211
+Sophie Devereaux  10/07/66  47481
+Alec Hardison     20/09/86  66268
+Eliot Spencer     27/06/74  65662
+Beth Parker       24/08/78  78582
