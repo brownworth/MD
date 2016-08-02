@@ -1,0 +1,5 @@
+Name               DOB       Zip
+John Smith         23/01/45  28211
+Bill Jones         12/01/52  47481
+Carla Wray         13/07/55  66268
+David Reynolds     19/11/58  65662
