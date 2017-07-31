@@ -1,0 +1,22 @@
+(TCT)
+Looks for the string "TCT" but then allows it to be captured.
+
+(TCT)\1
+Looks for the string "TCT", captures it (as capture group 1) and then finds a repeat. This will find "TCTTCT".
+
+(T[AC]T)
+Looks for the string "TAT" or "TCT" and captures it (as capture group 1), but not "TACT".
+
+(T[AC]T)\1
+Looks for the string "TAT" or "TCT", captures it (as capture group 1) and then finds a repeat. This will find "TATTAT" or TCTTCT", but not "TCTTAT" or "TATTCT".
+
+(T[AC]T)(\w{5,8})(CGT)
+Finds "TAT" or "TCT" (capture group 1), followed by 5 to 8 characters (capture group 2), and then "CGT" (capture group 3).
+
+Using the last one as an example, can use this as the replacement string to separate the characters out inside of the text:
+---\1|\2|\3---
+turning TCTTCAATACGT into -TCT|TCAATA|CGT-
+
+searching for .*?(T[AC]T)(\w{5,8})(CGT)
+and replacing with \1\2\3\n (\n means new line)
+will make a list of our matches (with the exception of some extraneous stuff at the end.). The .*? part at the beginning of the search segment essentially means: "look for the smallest set of characters between two sets of matches."

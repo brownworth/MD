@@ -1,0 +1,31 @@
+Regular expressions for formatting the text file:
+
+The regular expression that parses each line:
+^(\w+)\s+(\w+)\s+(\d{1,2})\/(\d{1,2})\/(\d{2,4})\s+([\d-]{5,10})\s+([\w\.]+@[\w\.]+)$
+$1 FirstName
+$2 LastName
+$3 Day
+$4 Month
+$5 Year
+$6 Zip
+$7 Email
+
+Replacement string:
+$2,$1\t$4\/$3\/$5\t$6\t$7
+Puts the line in the format:
+lastName,FirstName	(tab) mm/dd/yy (tab) Zip (tab) email
+
+The regular expression that parses each line, presuming an optional first name:
+^((\w+)\s+)?(\w+)\s+(\d{1,2})\/(\d{1,2})\/(\d{2,4})\s+([\d-]{5,10})\s+([\w\.]+@[\w\.]+)$
+$2 FirstName
+$3 LastName
+$4 Day
+$5 Month
+$6 Year
+$7 Zip
+$8 Email
+
+Replacement string:
+$3,$2\t$5\/$4\/$6\t$7\t$8
+Puts the line in the format:
+lastName,optionalFirstName	(tab) mm/dd/yy (tab) Zip (tab) email
